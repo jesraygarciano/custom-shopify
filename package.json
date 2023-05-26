@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "shopify-api-node": "^3.12.5"
+  }
+}
