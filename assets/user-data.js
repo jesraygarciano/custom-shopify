@@ -1,7 +1,5 @@
 console.log("USER-DATA JS");
 
-
-
 // Products
 fetch('/products.json')
 .then(response => response.json())
@@ -45,3 +43,4 @@ fetch('/blogs/{blog_id}/articles.json')
 //   .then(products => console.log(products))
 //   .catch(err => console.error(err));
 
+console.log("USER-DATA JS BOTTOM");
