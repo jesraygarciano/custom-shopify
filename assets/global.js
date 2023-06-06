@@ -1225,4 +1225,16 @@ window.onload = function() {
   });
 }
 
+const Shopify = require('shopify-api-node');
+
+const shopify = new Shopify({
+  shopName: 'eco-pendulum',
+  apiKey: '8c9e4e7d68911b51fe698d7c3c90ba22',
+  password: 'gecrud'
+});
+
+shopify.product.list()
+  .then(products => console.log(products))
+  .catch(err => console.error(err));
+
 customElements.define('product-recommendations', ProductRecommendations);
