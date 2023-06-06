@@ -1225,17 +1225,17 @@ window.onload = function() {
   });
 }
 
-const Shopify = require('shopify-api-node');
+const ShopifyData = require('shopify-api-node');
 
-const shopify = new Shopify({
+const shopifydatum = new ShopifyData({
   shopName: 'eco-pendulum',
   apiKey: '8c9e4e7d68911b51fe698d7c3c90ba22',
   password: 'gecrud'
 });
 
-console.log(shopify);
+console.log(shopifydatum);
 
-shopify.product.list()
+shopifydatum.product.list()
   .then(products => console.log(products))
   .catch(err => console.error(err));
 
