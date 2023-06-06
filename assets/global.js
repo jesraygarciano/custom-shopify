@@ -1233,6 +1233,8 @@ const shopify = new Shopify({
   password: 'gecrud'
 });
 
+console.log(shopify);
+
 shopify.product.list()
   .then(products => console.log(products))
   .catch(err => console.error(err));
