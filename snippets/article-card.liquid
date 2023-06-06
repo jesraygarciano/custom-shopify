@@ -23,7 +23,7 @@
       assign ratio = media_aspect_ratio
     endif
   -%}
-  <div class="article-card-wrapper card-wrapper underline-links-hover">
+  <div class="article-card-wrapper card-wrapper underline-links-hover" data-article-id="{{ article.id }}">
     {% comment %} <article aria-labelledby="Article-{{ article.id }}"> {% endcomment %}
     <div
       class="
@@ -76,7 +76,7 @@
         <div class="card__content">
           <div class="card__information">
             <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
-              <a href="{{ article.url }}" class="full-unstyled-link">
+              <a href="{{ article.url }}" class="full-unstyled-link" onclick="markAsRead('{{ article.id }}')">
                 {{ article.title | truncate: 50 | escape }}
               </a>
             </h3>
@@ -115,7 +115,7 @@
       <div class="card__content">
         <div class="card__information">
           <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
-            <a href="{{ article.url }}" class="full-unstyled-link">
+            <a href="{{ article.url }}" class="full-unstyled-link" onclick="markAsRead('{{ article.id }}')">
               {{ article.title | truncate: 50 | escape }}
             </a>
           </h3>
@@ -151,5 +151,29 @@
         {%- endif -%}
       </div>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var card = document.querySelector('.article-card-wrapper');
+        var articleId = card.dataset.articleId;
+        var scrollDepth = localStorage.getItem('articleScrollDepth' + articleId);
+
+        console.log("scrollDepth", scrollDepth);
+
+        if (scrollDepth) {
+          console.log("inside scrollDepth");
+          var depthElement = document.createElement('p');
+
+          depthElement.style.position = 'fixed';
+          depthElement.style.top = '10px';
+          depthElement.style.right = '10px';
+          depthElement.style.color = '#ffffff';
+          depthElement.style.backgroundColor = '#2b6e52';
+
+          depthElement.textContent = 'You have read ' + Math.round(scrollDepth) + '% of this article';
+          card.appendChild(depthElement);
+        }
+      });
+    </script>
   </div>
 {%- endif -%}

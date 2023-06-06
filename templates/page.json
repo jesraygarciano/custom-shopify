@@ -2,13 +2,82 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "padding_top": 20,
+        "padding_bottom": 16
+      }
+    },
+    "aa417db0-cef8-4d14-bbd7-f8a8b67dcbaa": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--19140278419732__aa417db0-cef8-4d14-bbd7-f8a8b67dcbaa-168509499333d3d833-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/71ip1mxZ8cL.jpg",
+            "title": "Javascript",
+            "text": "<p>JavaScript Ninja: Unleashing the Power of Web Development<\/p>",
+            "link_label": "Complete course",
+            "link": "shopify:\/\/blogs\/javascript"
+          }
+        },
+        "template--19140278419732__aa417db0-cef8-4d14-bbd7-f8a8b67dcbaa-168509499333d3d833-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/610ZsMZG5QL.jpg",
+            "title": "Python",
+            "text": "<p>Mastering Python: A Comprehensive Guide<\/p>",
+            "link_label": "Complete course",
+            "link": ""
+          }
+        },
+        "template--19140278419732__aa417db0-cef8-4d14-bbd7-f8a8b67dcbaa-168509499333d3d833-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Java-Logo.png",
+            "title": "Java",
+            "text": "<p>Java: Empowering Your Code, Elevating Your World!<\/p>",
+            "link_label": "Complete course",
+            "link": "shopify:\/\/blogs\/java"
+          }
+        },
+        "40b71521-589a-49f1-ba59-d6d35bf8b221": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/React-icon_svg.png",
+            "title": "ReactJS",
+            "text": "<p>ReactJS: Transforming Ideas into Dynamic Web Experiences!<\/p>",
+            "link_label": "Complete course",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19140278419732__aa417db0-cef8-4d14-bbd7-f8a8b67dcbaa-168509499333d3d833-0",
+        "template--19140278419732__aa417db0-cef8-4d14-bbd7-f8a8b67dcbaa-168509499333d3d833-1",
+        "template--19140278419732__aa417db0-cef8-4d14-bbd7-f8a8b67dcbaa-168509499333d3d833-2",
+        "40b71521-589a-49f1-ba59-d6d35bf8b221"
+      ],
+      "settings": {
+        "title": "Select languages",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Full programming list",
+        "button_link": "shopify:\/\/blogs\/programming",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "aa417db0-cef8-4d14-bbd7-f8a8b67dcbaa"
   ]
 }

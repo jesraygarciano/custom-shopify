@@ -1166,4 +1166,63 @@ class ProductRecommendations extends HTMLElement {
   }
 }
 
+//Mark as read Article
+function markAsRead(articleId) {
+  let readArticles = localStorage.getItem('readArticles');
+  
+  if(readArticles) {
+    readArticles = JSON.parse(readArticles);
+  } else {
+    readArticles = [];
+  }
+
+  if(!readArticles.includes(articleId)) {
+    readArticles.push(articleId);
+  }
+
+  localStorage.setItem('readArticles', JSON.stringify(readArticles));
+}
+
+function isRead(articleId) {
+  let readArticles = localStorage.getItem('readArticles');
+  
+  if(readArticles) {
+    readArticles = JSON.parse(readArticles);
+    return readArticles.includes(articleId);
+  } else {
+    return false;
+  }
+}
+
+window.onload = function() {
+  // let articleCards = document.querySelectorAll('.article-card');
+  let articleCards = document.querySelectorAll('.article-card-wrapper');
+  articleCards.forEach(function(card) {
+    let articleId = card.dataset.articleId;
+    console.log("articleId ", articleId);
+    if(isRead(articleId)) {
+      card.classList.add('gart');
+      console.log("Has been read");
+
+
+  //       if(readArticles.includes(articleId)) {
+  //   let scrollElement = document.createElement('h2');
+  //   scrollElement.id = 'scrollPercentage';
+  //   scrollElement.style.position = 'fixed';
+  //   scrollElement.style.bottom = '10px';
+  //   scrollElement.style.right = '10px';
+  //   scrollElement.innerText = `Scrolled: ${scrollPercentage().toFixed(2)}%`;
+  //   document.body.appendChild(scrollElement);
+
+  //   window.addEventListener('scroll', () => {
+  //     scrollElement.innerText = `Scrolled: ${scrollPercentage().toFixed(2)}%`;
+  //   });
+
+  //   return true;
+  // }
+      
+    }
+  });
+}
+
 customElements.define('product-recommendations', ProductRecommendations);

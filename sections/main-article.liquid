@@ -1,6 +1,6 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting" data-article-id="{{ article.id }}">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
@@ -275,6 +275,25 @@
       </div>
     </div>
   {%- endif -%}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var article = document.querySelector('.article-template');
+      var articleId = article.dataset.articleId;
+
+      window.addEventListener('scroll', function() {
+
+        console.log("article", article);
+        console.log("articleId", articleId);
+
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrollPercent = scrollTop / docHeight * 100;
+
+        localStorage.setItem('articleScrollDepth' + articleId, scrollPercent);
+      });
+    });
+  </script>
 </article>
 
 <script type="application/ld+json">

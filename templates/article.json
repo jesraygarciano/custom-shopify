@@ -23,15 +23,30 @@
           }
         },
         "content": {
-          "type": "content"
+          "type": "content",
+          "settings": {
+          }
+        },
+        "a76118c4-2c09-4def-8e8f-bcd8213042e1": {
+          "type": "shopify:\/\/apps\/paywhirl\/blocks\/paywhirl-plan-selector\/41e95d60-82cf-46e8-84de-618d7e4c37b7",
+          "settings": {
+            "font_scale": 100,
+            "theme": "default",
+            "selling_plans_first": true,
+            "theme_color": "#334FB4",
+            "product": ""
+          }
         }
       },
       "block_order": [
         "featured_image",
         "title",
         "share",
-        "content"
-      ]
+        "content",
+        "a76118c4-2c09-4def-8e8f-bcd8213042e1"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [

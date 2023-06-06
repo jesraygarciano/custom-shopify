@@ -3316,3 +3316,11 @@ details-disclosure > details {
     --sparkle: url('./sparkle.gif');
   }
 }
+
+/* body {
+    background-color: red!important;
+} */
+
+.gart {
+    background-color: #9cffa6;
+}
