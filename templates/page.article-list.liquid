@@ -10,3 +10,24 @@
 {% endfor %}
 
 <h3>Sample</h3>
+
+{% for blog in blogs %}
+  <h2>{{ blog.title }}</h2>
+  {% for article in blog.articles %}
+    <article>
+      <h3>
+        <a href="{{ article.url }}">{{ article.title }}</a>
+      </h3>
+      <p>{{ article.excerpt }}</p>
+      <p>{{ article.published_at | date: '%B %d, %Y' }}</p>
+      <a href="{{ article.url }}">Read more</a>
+    </article>
+  {% endfor %}
+{% endfor %}
+
+<h3>Sample lists</h3>
+{% for post in user_posts %}
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.content }}</p>
+  <p>{{ post.date | date }}</p>
+{% endfor %}
