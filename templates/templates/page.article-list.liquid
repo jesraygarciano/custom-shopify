@@ -1,0 +1,10 @@
+{% assign blogs = shop.blogs %}
+{% for blog in blogs %}
+  <h2>{{ blog.title }}</h2>
+  {% for article in blog.articles %}
+    <h3>
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h3>
+    <p>{{ article.content }}</p>
+  {% endfor %}
+{% endfor %}
